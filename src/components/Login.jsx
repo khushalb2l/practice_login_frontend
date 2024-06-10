@@ -31,9 +31,10 @@ const Login = ({isLoggedIn,setIsLoggedIn}) => {
     return (
     <div>
       <h2>Welcome to Login page!</h2>
-      <input placeholder='Enter Email' type='email' value={email} onChange={(e)=>setEmail(e.target.value)} />
+      {/* <input placeholder='Enter Email' type='email' value={email} onChange={(e)=>setEmail(e.target.value)} />
       <input placeholder='Enter Password' type='password' value={password} onChange={(e)=>setPassword(e.target.value)} />
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" >Login</button>
+     */}
     </div>
   )
 }
