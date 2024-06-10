@@ -14,15 +14,10 @@ const App = () => {
         element={<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
       />
       <Route
-        path="/login"
-        element={
-          <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-        }
-      />
-      <Route
         path="/protected"
         element={<Protected isLoggedIn={isLoggedIn} />}
       />
+      <Route path="/login" element={<Login/>} />
       <Route path="*" element={<Navigate to="/" />}></Route>
     </Routes>
   );
