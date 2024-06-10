@@ -9,9 +9,9 @@ const Login = ({isLoggedIn,setIsLoggedIn}) => {
 
     
       // Redirect to home if already logged in
-      if (isLoggedIn) {
-        return window.location.href = '/';
-      }
+      // if (isLoggedIn) {
+      //   return window.location.href = '/';
+      // }
 
 
     const handleLogin=async()=>{
