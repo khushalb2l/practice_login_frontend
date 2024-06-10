@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react'
 import axios from "axios"
 
 const BASE_URL=import.meta.env.VITE_API_BASE_URL;
-
+console.log(BASE_URL);
 const Login = ({isLoggedIn,setIsLoggedIn}) => {
     if(isLoggedIn){
         return window.location.href='/';
