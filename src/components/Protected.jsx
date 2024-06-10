@@ -4,10 +4,7 @@ import React, { useEffect, useState } from "react";
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Protected = ({isLoggedIn}) => {
-    if(!isLoggedIn){
-        return window.location.href='/login';
-    }
-    const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("");
   useEffect(() => {
     const fetchData = async () => {
       try {
