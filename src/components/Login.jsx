@@ -14,26 +14,26 @@ const Login = ({isLoggedIn,setIsLoggedIn}) => {
       // }
 
 
-    const handleLogin=async()=>{
-        try{
-            const response=await axios.post(`${BASE_URL}/api/v1/login`,{email,password});
-            const {token}=response.data;
-            console.log(token);
-            localStorage.setItem('token',token);
-            setIsLoggedIn(true);
-            window.location.href='/';
-        }
-        catch(error){
-            console.log("error while loggin");
-        }
-    }
+    // const handleLogin=async()=>{
+    //     try{
+    //         const response=await axios.post(`${BASE_URL}/api/v1/login`,{email,password});
+    //         const {token}=response.data;
+    //         console.log(token);
+    //         localStorage.setItem('token',token);
+    //         setIsLoggedIn(true);
+    //         window.location.href='/';
+    //     }
+    //     catch(error){
+    //         console.log("error while loggin");
+    //     }
+    // }
 
     return (
     <div>
       <h2>Welcome to Login page!</h2>
       <input placeholder='Enter Email' type='email' value={email} onChange={(e)=>setEmail(e.target.value)} />
       <input placeholder='Enter Password' type='password' value={password} onChange={(e)=>setPassword(e.target.value)} />
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={handleLogin}>Login</button>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" >Login</button>
     </div>
   )
 }
