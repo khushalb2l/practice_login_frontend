@@ -1,35 +1,30 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Home = ({isLoggedIn,setIsLoggedIn}) => {
-  
-    const handleLogout=()=>{
-        localStorage.removeItem('token');
-        setIsLoggedIn(false);
-        window.location.href='/';
-    }
-    const handleLogin=()=>{
-        window.location.href='/login';
-    }
+const Home = ({ isLoggedIn, setIsLoggedIn }) => {
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
+  };
 
-    return (
+  return (
     <div>
-      {
-        isLoggedIn ? (
+      {isLoggedIn ? (
         <div>
-            <h1>welcome! You are logged in</h1>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={handleLogout}>Logout</button>
-        </div>    
-        )
-        :
-        (
-            <div>
-                <h1>Welcome to homepage</h1>
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={handleLogin}>Login</button>
-            </div>
-        )
-      }
+          <h1>Welcome! You are logged in</h1>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
+      ) : (
+        <div>
+          <h1>Welcome to the Home page</h1>
+          <p>Please log in to continue</p>
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

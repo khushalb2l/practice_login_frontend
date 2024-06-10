@@ -1,32 +1,16 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from 'react';
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
-const Protected = ({isLoggedIn}) => {
-  const [message, setMessage] = useState("");
-  
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const token = window.localStorage.getItem("token");
-        const response = await axios.get(`${BASE_URL}/api/v1/protected`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setMessage(response.data.message);
-      } catch (error) {
-        console.log(error, "While fetching the protected page message!");
-      }
-    };
-    fetchData();
-  }, []);
-
+const Protected = ({ isLoggedIn }) => {
   return (
     <div>
-      <h1>Protected Page</h1>
-      <p>{message}</p>
+      {isLoggedIn ? (
+        <div>
+          <h1>Protected Page</h1>
+          <p>This page can only be accessed when logged in.</p>
+        </div>
+      ) : (
+        <p>You need to log in to access this page.</p>
+      )}
     </div>
   );
 };
